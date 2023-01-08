@@ -880,7 +880,7 @@ public class VodController extends BaseController {
     private boolean reexPlayerExist = false;
     private boolean KodiExist = false;
     private boolean nPlayerExist = false;
-    private boolean vLCPLayerExist = false;
+    private boolean vLCPlayerExist = false;
     private boolean justPlayerExist = false;
     private boolean novaPlayerExist = false;
     private boolean KodinerdsExist = false;
@@ -894,7 +894,7 @@ public class VodController extends BaseController {
         nPlayerExist = nPlayer.getPackageInfo() != null;
         vLCPlayerExist = VLCPlayer.getPackageInfo() != null;
         justPlayerExist = JustPlayer.getPackageInfo() != null;
-        novaPlayerExist = NovaPlyer.getPackageInfo() != null;
+        novaPlayerExist = NovaPlayer.getPackageInfo() != null;
         KodinerdsExist = Kodinerds.getPackageInfo() != null;
         vimuPlayerExist = VimuPlayer.getPackageInfo() != null;
     }
