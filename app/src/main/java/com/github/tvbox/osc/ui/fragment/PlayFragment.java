@@ -558,7 +558,7 @@ public class PlayFragment extends BaseLazyFragment {
                                     }
                                     case 14: {
                                         extPlay = true;
-                                        callResult = VLC.run(requireActivity(), url, playTitle, playSubtitle, headers);
+                                        callResult = VLCPlayer.run(requireActivity(), url, playTitle, playSubtitle, headers);
                                         break;
                                     }
                                     case 15: {
