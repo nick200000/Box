@@ -20,7 +20,7 @@ public class NovaPlayer {
     public static final String TAG = "ThirdParty.Nova";
 
     private static final String PACKAGE_NAME = "org.courville.nova";
-    private static final String PLAYBACK_ACTIVITY = "org.courville.nova.MainActivity";
+    private static final String PLAYBACK_ACTIVITY = "org.courville.nova.ActivityScreen";
 
     private static class NovaPackageInfo {
         final String packageName;
