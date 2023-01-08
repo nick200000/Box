@@ -20,25 +20,25 @@ public class VLCPlayer {
     private static final String PACKAGE_NAME = "org.videolan.vlc";
     private static final String PLAYBACK_ACTIVITY = "org.videolan.vlc.gui.video.VideoPlayerActivity";
 
-    private static class VLCPackageInfo {
+    private static class VLCPlayerPackageInfo {
         final String packageName;
         final String activityName;
 
-        VLCPackageInfo(String packageName, String activityName) {
+        VLCPlayerPackageInfo(String packageName, String activityName) {
             this.packageName = packageName;
             this.activityName = activityName;
         }
     }
 
-    private static final VLCPackageInfo[] PACKAGES = {
-            new VLCPackageInfo(PACKAGE_NAME, PLAYBACK_ACTIVITY),
+    private static final VLCPlayerPackageInfo[] PACKAGES = {
+            new VLCPlayerPackageInfo(PACKAGE_NAME, PLAYBACK_ACTIVITY),
     };
 
     /**
      * @return null if any VLC Player packages not exist.
      */
-    public static VLCPackageInfo getPackageInfo() {
-        for (VLCPackageInfo pkg : PACKAGES) {
+    public static VLCPlayerPackageInfo getPackageInfo() {
+        for (VLCPlayerPackageInfo pkg : PACKAGES) {
             try {
                 ApplicationInfo info = App.getInstance().getPackageManager().getApplicationInfo(pkg.packageName, 0);
                 if (info.enabled)
@@ -71,7 +71,7 @@ public class VLCPlayer {
 
 
     public static boolean run(Activity activity, String url, String title, String subtitle, HashMap<String, String> headers) {
-        VLCPackageInfo packageInfo = getPackageInfo();
+        VLCPlayerPackageInfo packageInfo = getPackageInfo();
         if (packageInfo == null)
             return false;
 
