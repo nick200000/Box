@@ -63,9 +63,9 @@ import com.github.tvbox.osc.player.thirdparty.Kodi;
 import com.github.tvbox.osc.player.thirdparty.MXPlayer;
 import com.github.tvbox.osc.player.thirdparty.ReexPlayer;
 import com.github.tvbox.osc.player.thirdparty.nPlayer;
-import com.github.tvbox.osc.player.thirdparty.VLC;
+import com.github.tvbox.osc.player.thirdparty.VLCPlayer;
 import com.github.tvbox.osc.player.thirdparty.JustPlayer;
-import com.github.tvbox.osc.player.thirdparty.NovaPlyer;
+import com.github.tvbox.osc.player.thirdparty.NovaPlayer;
 import com.github.tvbox.osc.player.thirdparty.Kodinerds;
 import com.github.tvbox.osc.player.thirdparty.VimuPlayer;
 import com.github.tvbox.osc.ui.adapter.SelectDialogAdapter;
@@ -565,7 +565,7 @@ public class PlayActivity extends BaseActivity {
                                     }
                                     case 14: {
                                         extPlay = true;
-                                        callResult = VLC.run(PlayActivity.this, url, playTitle, playSubtitle, headers);
+                                        callResult = VLCPlayer.run(PlayActivity.this, url, playTitle, playSubtitle, headers);
                                         break;
                                     }
                                     case 15: {
