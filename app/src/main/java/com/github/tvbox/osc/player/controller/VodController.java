@@ -37,6 +37,12 @@ import com.github.tvbox.osc.bean.ParseBean;
 import com.github.tvbox.osc.player.thirdparty.Kodi;
 import com.github.tvbox.osc.player.thirdparty.MXPlayer;
 import com.github.tvbox.osc.player.thirdparty.ReexPlayer;
+import com.github.tvbox.osc.player.thirdparty.nPlayer;
+import com.github.tvbox.osc.player.thirdparty.VLC;
+import com.github.tvbox.osc.player.thirdparty.JustPlayer;
+import com.github.tvbox.osc.player.thirdparty.NovaPlayer;
+import com.github.tvbox.osc.player.thirdparty.Kodinerds;
+import com.github.tvbox.osc.player.thirdparty.VimuPlayer;
 import com.github.tvbox.osc.subtitle.widget.SimpleSubtitleView;
 import com.github.tvbox.osc.ui.activity.DetailActivity;
 import com.github.tvbox.osc.ui.activity.HomeActivity;
@@ -610,6 +616,24 @@ public class VodController extends BaseController {
                     if (KodiExist) {
                         players.add(12);
                     }
+                    if (nPlayerExist) {
+                        players.add(13);
+                    }
+                    if (VLCExist) {
+                        players.add(14);
+                    }
+                    if (JustPlayerExist) {
+                        players.add(15);
+                    }
+                    if (NovaPlayerExist) {
+                        players.add(16);
+                    }
+                    if (KodinerdsExist) {
+                        players.add(17);
+                    }
+                    if (VimuPlayerExist) {
+                        players.add(18);
+                    }
                     SelectDialog<Integer> dialog = new SelectDialog<>(mActivity);
                     dialog.setTip(HomeActivity.getRes().getString(R.string.dia_player));
                     dialog.setAdapter(new SelectDialogAdapter.SelectDialogInterface<Integer>() {
@@ -843,13 +867,24 @@ public class VodController extends BaseController {
     private boolean mxPlayerExist = false;
     private boolean reexPlayerExist = false;
     private boolean KodiExist = false;
-
+    private boolean nPlayerExist = false;
+    private boolean VLCExist = false;
+    private boolean JustPlayerExist = false;
+    private boolean NovaPlayerExist = false;
+    private boolean KodinerdsExist = false;
+    private boolean VumiPlayerExist = false;
     public void setPlayerConfig(JSONObject playerCfg) {
         this.mPlayerConfig = playerCfg;
         updatePlayerCfgView();
         mxPlayerExist = MXPlayer.getPackageInfo() != null;
         reexPlayerExist = ReexPlayer.getPackageInfo() != null;
         KodiExist = Kodi.getPackageInfo() != null;
+        nPlayerExist = nPlayer.getPackageInfo() != null;
+        VLCExist = VLC.getPackageInfo() != null;
+        JustPlayerExist = JustPlayer.getPackageInfo() != null;
+        NovaPlyerExist = NovaPlyer.getPackageInfo() != null;
+        KodinerdsExist = Kodinerds.getPackageInfo() != null;
+        VimuPlayerExist = VimuPlayer.getPackageInfo() != null;
     }
 
     void updatePlayerCfgView() {
