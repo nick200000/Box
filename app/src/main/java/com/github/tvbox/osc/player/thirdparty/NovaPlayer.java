@@ -16,24 +16,24 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 
-public class NovaPlayerPlayer {
-    public static final String TAG = "ThirdParty.NovaPlayer";
+public class NovaPlayer {
+    public static final String TAG = "ThirdParty.Nova";
 
     private static final String PACKAGE_NAME = "org.courville.nova";
     private static final String PLAYBACK_ACTIVITY = "org.courville.nova.MainActivity";
 
-    private static class NovaPlayerPackageInfo {
+    private static class NovaPackageInfo {
         final String packageName;
         final String activityName;
 
-        NovaPlayerPackageInfo(String packageName, String activityName) {
+        NovaPackageInfo(String packageName, String activityName) {
             this.packageName = packageName;
             this.activityName = activityName;
         }
     }
 
-    private static final NovaPlayerPackageInfo[] PACKAGES = {
-            new NovaPlayerPackageInfo(PACKAGE_NAME, PLAYBACK_ACTIVITY),
+    private static final NovaPackageInfo[] PACKAGES = {
+            new NovaPackageInfo(PACKAGE_NAME, PLAYBACK_ACTIVITY),
     };
 
     public static NovaPlayerPackageInfo getPackageInfo() {
@@ -43,16 +43,16 @@ public class NovaPlayerPlayer {
                 if (info.enabled)
                     return pkg;
                 else
-                    Log.v(TAG, "NovaPlayer Player package `" + pkg.packageName + "` is disabled.");
+                    Log.v(TAG, "Nova Player package `" + pkg.packageName + "` is disabled.");
             } catch (PackageManager.NameNotFoundException ex) {
-                Log.v(TAG, "NovaPlayer Player package `" + pkg.packageName + "` does not exist.");
+                Log.v(TAG, "Nova Player package `" + pkg.packageName + "` does not exist.");
             }
         }
         return null;
     }
 
     public static boolean run(Activity activity, String url, String title, String subtitle, HashMap<String, String> headers) {
-        NovaPlayerPackageInfo packageInfo = getPackageInfo();
+        NovaPackageInfo packageInfo = getPackageInfo();
         if (packageInfo == null)
             return false;
 
