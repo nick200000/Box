@@ -62,20 +62,20 @@ public class VimuPlayer {
         intent.setData(Uri.parse(url));
         intent.putExtra("title", title);
         intent.putExtra("name", title);
-        intent.putExtra("Vimu.extra.title", title);
+        intent.putExtra("vimu.extra.title", title);
         if (headers != null && headers.size() > 0) {
             try {
                 JSONObject json = new JSONObject();
                 for (String key : headers.keySet()) {
                     json.put(key, headers.get(key).trim());
                 }
-                intent.putExtra("Vimu.extra.http_header", json.toString());
+                intent.putExtra("vimu.extra.http_header", json.toString());
             } catch (JSONException e) {
                 e.printStackTrace();
             }
         }
         if (subtitle != null && !subtitle.isEmpty()) {
-            intent.putExtra("Vimu.extra.subtitle", subtitle);
+            intent.putExtra("vimu.extra.subtitle", subtitle);
         }
         try {
             activity.startActivity(intent);
