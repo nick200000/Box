@@ -20,7 +20,7 @@ public class JustPlayer {
     public static final String TAG = "ThirdParty.Just";
 
     private static final String PACKAGE_NAME = "com.brouken.player";
-    private static final String PLAYBACK_ACTIVITY = "com.brouken.player.MainActivity";
+    private static final String PLAYBACK_ACTIVITY = "com.brouken.player.ActivityScreen";
 
     private static class JustPackageInfo {
         final String packageName;
