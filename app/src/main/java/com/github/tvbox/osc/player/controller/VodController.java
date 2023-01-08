@@ -619,19 +619,19 @@ public class VodController extends BaseController {
                     if (nPlayerExist) {
                         players.add(13);
                     }
-                    if (VLCPlayerExist) {
+                    if (vLCPlayerExist) {
                         players.add(14);
                     }
-                    if (JustPlayerExist) {
+                    if (justPlayerExist) {
                         players.add(15);
                     }
-                    if (NovaPlayerExist) {
+                    if (novaPlayerExist) {
                         players.add(16);
                     }
                     if (KodinerdsExist) {
                         players.add(17);
                     }
-                    if (VimuPlayerExist) {
+                    if (vimuPlayerExist) {
                         players.add(18);
                     }
                     SelectDialog<Integer> dialog = new SelectDialog<>(mActivity);
