@@ -20,7 +20,7 @@ public class VLCPlayer {
     private static final String PACKAGE_NAME = "org.videolan.vlc";
     private static final String PLAYBACK_ACTIVITY = "org.videolan.vlc.ActivityScreen";
 
-    private static class JustPackageInfo {
+    private static class VLCPackageInfo {
         final String packageName;
         final String activityName;
 
