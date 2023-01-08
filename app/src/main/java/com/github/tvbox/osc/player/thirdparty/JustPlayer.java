@@ -36,7 +36,7 @@ public class JustPlayer {
             new JustPackageInfo(PACKAGE_NAME, PLAYBACK_ACTIVITY),
     };
 
-    public static JustPlayerPackageInfo getPackageInfo() {
+    public static JustPackageInfo getPackageInfo() {
         for (JustPackageInfo pkg : PACKAGES) {
             try {
                 ApplicationInfo info = App.getInstance().getPackageManager().getApplicationInfo(pkg.packageName, 0);
