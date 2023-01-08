@@ -55,7 +55,7 @@ import com.github.tvbox.osc.player.thirdparty.Kodi;
 import com.github.tvbox.osc.player.thirdparty.MXPlayer;
 import com.github.tvbox.osc.player.thirdparty.ReexPlayer;
 import com.github.tvbox.osc.player.thirdparty.nPlayer;
-import com.github.tvbox.osc.player.thirdparty.VLC;
+import com.github.tvbox.osc.player.thirdparty.VLCPlayer;
 import com.github.tvbox.osc.player.thirdparty.JustPlayer;
 import com.github.tvbox.osc.player.thirdparty.NovaPlayer;
 import com.github.tvbox.osc.player.thirdparty.Kodinerds;
