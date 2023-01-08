@@ -868,11 +868,11 @@ public class VodController extends BaseController {
     private boolean reexPlayerExist = false;
     private boolean KodiExist = false;
     private boolean nPlayerExist = false;
-    private boolean VLCPLayerExist = false;
-    private boolean JustPlayerExist = false;
-    private boolean NovaPlayerExist = false;
+    private boolean vLCPLayerExist = false;
+    private boolean justPlayerExist = false;
+    private boolean novaPlayerExist = false;
     private boolean KodinerdsExist = false;
-    private boolean VumiPlayerExist = false;
+    private boolean vimuPlayerExist = false;
     public void setPlayerConfig(JSONObject playerCfg) {
         this.mPlayerConfig = playerCfg;
         updatePlayerCfgView();
