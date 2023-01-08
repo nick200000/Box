@@ -36,7 +36,7 @@ public class NovaPlayer {
             new NovaPackageInfo(PACKAGE_NAME, PLAYBACK_ACTIVITY),
     };
 
-    public static NovaPlayerPackageInfo getPackageInfo() {
+    public static NovaPackageInfo getPackageInfo() {
         for (NovaPlayerPackageInfo pkg : PACKAGES) {
             try {
                 ApplicationInfo info = App.getInstance().getPackageManager().getApplicationInfo(pkg.packageName, 0);
