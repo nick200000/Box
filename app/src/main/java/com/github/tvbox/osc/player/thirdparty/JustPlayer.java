@@ -11,8 +11,8 @@ import android.util.Log;
 
 import com.github.tvbox.osc.base.App;
 
-import org.json.JSONException;
-import org.json.JSONObject;
+import java.net.URLEncoder;
+import java.util.HashMap;
 
 import java.util.HashMap;
 
