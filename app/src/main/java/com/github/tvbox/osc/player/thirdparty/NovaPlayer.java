@@ -26,17 +26,17 @@ public class NovaPlayer {
         final String packageName;
         final String activityName;
 
-        NovaPackageInfo(String packageName, String activityName) {
+        NovaPlayerPackageInfo(String packageName, String activityName) {
             this.packageName = packageName;
             this.activityName = activityName;
         }
     }
 
-    private static final NovaPackageInfo[] PACKAGES = {
-            new NovaPackageInfo(PACKAGE_NAME, PLAYBACK_ACTIVITY),
+    private static final NovaPlayerPackageInfo[] PACKAGES = {
+            new NovaPlayerPackageInfo(PACKAGE_NAME, PLAYBACK_ACTIVITY),
     };
 
-    public static NovaPackageInfo getPackageInfo() {
+    public static NovaPlayerPackageInfo getPackageInfo() {
         for (NovaPlayerPackageInfo pkg : PACKAGES) {
             try {
                 ApplicationInfo info = App.getInstance().getPackageManager().getApplicationInfo(pkg.packageName, 0);
