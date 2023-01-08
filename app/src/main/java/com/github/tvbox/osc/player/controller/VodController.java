@@ -892,9 +892,9 @@ public class VodController extends BaseController {
         reexPlayerExist = ReexPlayer.getPackageInfo() != null;
         KodiExist = Kodi.getPackageInfo() != null;
         nPlayerExist = nPlayer.getPackageInfo() != null;
-        vLCPlayerExist = VLC.getPackageInfo() != null;
+        vLCPlayerExist = VLCPlayer.getPackageInfo() != null;
         justPlayerExist = JustPlayer.getPackageInfo() != null;
-        novaPlyerExist = NovaPlyer.getPackageInfo() != null;
+        novaPlayerExist = NovaPlyer.getPackageInfo() != null;
         KodinerdsExist = Kodinerds.getPackageInfo() != null;
         vimuPlayerExist = VimuPlayer.getPackageInfo() != null;
     }
