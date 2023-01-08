@@ -17,7 +17,7 @@ import org.json.JSONObject;
 import java.util.HashMap;
 
 public class NovaPlayer {
-    public static final String TAG = "ThirdParty.NovaPlayer";
+    public static final String TAG = "ThirdParty.Nova";
 
     private static final String PACKAGE_NAME = "org.courville.nova";
     private static final String PLAYBACK_ACTIVITY = "org.courville.nova.MainActivity";
@@ -26,18 +26,18 @@ public class NovaPlayer {
         final String packageName;
         final String activityName;
 
-        NovaPlayerPackageInfo(String packageName, String activityName) {
+        NovaPackageInfo(String packageName, String activityName) {
             this.packageName = packageName;
             this.activityName = activityName;
         }
     }
 
-    private static final NovaPlayerPackageInfo[] PACKAGES = {
-            new NovaPlayerPackageInfo(PACKAGE_NAME, PLAYBACK_ACTIVITY),
+    private static final NovaPackageInfo[] PACKAGES = {
+            new NovaPackageInfo(PACKAGE_NAME, PLAYBACK_ACTIVITY),
     };
 
-    public static NovaPlayerPackageInfo getPackageInfo() {
-        for (NovaPlayerPackageInfo pkg : PACKAGES) {
+    public static NovaPackageInfo getPackageInfo() {
+        for (NovaPackageInfo pkg : PACKAGES) {
             try {
                 ApplicationInfo info = App.getInstance().getPackageManager().getApplicationInfo(pkg.packageName, 0);
                 if (info.enabled)
