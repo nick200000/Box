@@ -62,20 +62,20 @@ public class JustPlayer {
         intent.setData(Uri.parse(url));
         intent.putExtra("title", title);
         intent.putExtra("name", title);
-        intent.putExtra("JustPlayer.extra.title", title);
+        intent.putExtra("justPlayer.extra.title", title);
         if (headers != null && headers.size() > 0) {
             try {
                 JSONObject json = new JSONObject();
                 for (String key : headers.keySet()) {
                     json.put(key, headers.get(key).trim());
                 }
-                intent.putExtra("JustPlayer.extra.http_header", json.toString());
+                intent.putExtra("justPlayer.extra.http_header", json.toString());
             } catch (JSONException e) {
                 e.printStackTrace();
             }
         }
         if (subtitle != null && !subtitle.isEmpty()) {
-            intent.putExtra("JustPlayer.extra.subtitle", subtitle);
+            intent.putExtra("justPlayer.extra.subtitle", subtitle);
         }
         try {
             activity.startActivity(intent);
