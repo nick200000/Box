@@ -17,8 +17,8 @@ import java.util.HashMap;
 public class Kodinerds {
     public static final String TAG = "ThirdParty.Kodinerds";
 
-    private static final String PACKAGE_NAME = "net.kodinerds.moaven.kodi20";
-    private static final String PLAYBACK_ACTIVITY = "net.kodinerds.moaven.kodi20.Splash";
+    private static final String PACKAGE_NAME = "net.kodinerds.maven.kodi20";
+    private static final String PLAYBACK_ACTIVITY = "net.kodinerds.maven.kodi20.Splash";
 
     private static class KodinerdsPackageInfo {
         final String packageName;
