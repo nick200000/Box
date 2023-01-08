@@ -149,6 +149,18 @@ public class PlayerHelper {
             return "Reex";
         } else if (playType == 12) {
             return "Kodi";
+        } else if (playType == 13) {
+            return "nPlayer";
+        } else if (playType == 14) {
+            return "VLC";
+        } else if (playType == 15) {
+            return "JustPlayer";
+        } else if (playType == 16) {
+            return "NovaPlayer";
+        } else if (playType == 17) {
+            return "Kodinerds";
+        } else if (playType == 18) {
+            return "VimuPlayer";
         } else {
             return "系统";
         }
