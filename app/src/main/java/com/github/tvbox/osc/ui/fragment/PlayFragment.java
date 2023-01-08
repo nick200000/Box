@@ -54,6 +54,12 @@ import com.github.tvbox.osc.player.controller.VodController;
 import com.github.tvbox.osc.player.thirdparty.Kodi;
 import com.github.tvbox.osc.player.thirdparty.MXPlayer;
 import com.github.tvbox.osc.player.thirdparty.ReexPlayer;
+import com.github.tvbox.osc.player.thirdparty.nPlayer;
+import com.github.tvbox.osc.player.thirdparty.VLC;
+import com.github.tvbox.osc.player.thirdparty.JustPlayer;
+import com.github.tvbox.osc.player.thirdparty.NovaPlayer;
+import com.github.tvbox.osc.player.thirdparty.Kodinerds;
+import com.github.tvbox.osc.player.thirdparty.VimuPlayer;
 import com.github.tvbox.osc.ui.adapter.SelectDialogAdapter;
 import com.github.tvbox.osc.ui.dialog.SearchSubtitleDialog;
 import com.github.tvbox.osc.ui.dialog.SelectDialog;
@@ -543,6 +549,36 @@ public class PlayFragment extends BaseLazyFragment {
                                     case 12: {
                                         extPlay = true;
                                         callResult = Kodi.run(requireActivity(), url, playTitle, playSubtitle, headers);
+                                        break;
+                                    }
+                                    case 13: {
+                                        extPlay = true;
+                                        callResult = nPlayer.run(requireActivity(), url, playTitle, playSubtitle, headers);
+                                        break;
+                                    }
+                                    case 14: {
+                                        extPlay = true;
+                                        callResult = VLC.run(requireActivity(), url, playTitle, playSubtitle, headers);
+                                        break;
+                                    }
+                                    case 15: {
+                                        extPlay = true;
+                                        callResult = JustPlayer.run(requireActivity(), url, playTitle, playSubtitle, headers);
+                                        break;
+                                    }
+                                    case 16: {
+                                        extPlay = true;
+                                        callResult = NovaPlayer.run(requireActivity(), url, playTitle, playSubtitle, headers);
+                                        break;
+                                    }
+                                    case 17: {
+                                        extPlay = true;
+                                        callResult = Kodinerds.run(requireActivity(), url, playTitle, playSubtitle, headers);
+                                        break;
+                                    }
+                                    case 18: {
+                                        extPlay = true;
+                                        callResult = VimuPlayer.run(requireActivity(), url, playTitle, playSubtitle, headers);
                                         break;
                                     }
                                 }
