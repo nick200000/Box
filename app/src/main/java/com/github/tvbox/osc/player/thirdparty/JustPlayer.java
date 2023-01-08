@@ -2,11 +2,11 @@ package com.github.tvbox.osc.player.thirdparty;
 
 import android.app.Activity;
 import android.content.ActivityNotFoundException;
-import android.content.ComponentName;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.Parcelable;
 import android.util.Log;
 
 import com.github.tvbox.osc.base.App;
@@ -14,10 +14,8 @@ import com.github.tvbox.osc.base.App;
 import java.net.URLEncoder;
 import java.util.HashMap;
 
-import java.util.HashMap;
-
 public class JustPlayer {
-    public static final String TAG = "ThirdParty.Just";
+    public static final String TAG = "ThirdParty.JustPlayer";
 
     private static final String PACKAGE_NAME = "com.brouken.player";
     private static final String PLAYBACK_ACTIVITY = "com.brouken.player.ActivityScreen";
@@ -36,6 +34,9 @@ public class JustPlayer {
             new JustPackageInfo(PACKAGE_NAME, PLAYBACK_ACTIVITY),
     };
 
+    /**
+     * @return null if any Just Player packages not exist.
+     */
     public static JustPackageInfo getPackageInfo() {
         for (JustPackageInfo pkg : PACKAGES) {
             try {
@@ -51,37 +52,57 @@ public class JustPlayer {
         return null;
     }
 
+    private static class Subtitle {
+        final Uri uri;
+        String name;
+        String filename;
+
+        Subtitle(Uri uri) {
+            if (uri.getScheme() == null)
+                throw new IllegalStateException("Scheme is missed for subtitle URI " + uri);
+
+            this.uri = uri;
+        }
+
+        Subtitle(String uriStr) {
+            this(Uri.parse(uriStr));
+        }
+    }
+
+
     public static boolean run(Activity activity, String url, String title, String subtitle, HashMap<String, String> headers) {
         JustPackageInfo packageInfo = getPackageInfo();
         if (packageInfo == null)
             return false;
 
-        Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent.setPackage(packageInfo.packageName);
-        intent.setComponent(new ComponentName(packageInfo.packageName, packageInfo.activityName));
-        intent.setData(Uri.parse(url));
-        intent.putExtra("title", title);
-        intent.putExtra("name", title);
-        intent.putExtra("justPlayer.extra.title", title);
-        if (headers != null && headers.size() > 0) {
-            try {
-                JSONObject json = new JSONObject();
-                for (String key : headers.keySet()) {
-                    json.put(key, headers.get(key).trim());
-                }
-                intent.putExtra("justPlayer.extra.http_header", json.toString());
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-        }
-        if (subtitle != null && !subtitle.isEmpty()) {
-            intent.putExtra("justPlayer.extra.subtitle", subtitle);
-        }
         try {
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setPackage(packageInfo.packageName);
+            intent.setClassName(packageInfo.packageName, packageInfo.activityName);
+            if (headers != null && headers.size() > 0) {
+                url = url + "|";
+                int idx = 0;
+                for (String hk : headers.keySet()) {
+                    url += hk + "=" + URLEncoder.encode(headers.get(hk), "UTF-8");
+                    if (idx < headers.keySet().size() -1) {
+                        url += "&";
+                    }
+                    idx ++;
+                }
+            }
+            intent.setData(Uri.parse(url));
+            intent.putExtra("title", title);
+
+            if (subtitle != null && !subtitle.isEmpty()) {
+                Parcelable[] parcels = new Parcelable[1];
+                parcels[0] = Uri.parse(subtitle);
+                intent.putExtra("subs", parcels);
+                intent.putExtra("subs.enable", parcels);
+            }
             activity.startActivity(intent);
             return true;
-        } catch (ActivityNotFoundException ex) {
-            Log.e(TAG, "Can't run JustPlayer", ex);
+        } catch (Exception ex) {
+            Log.e(TAG, "Can't run Just Player", ex);
             return false;
         }
     }
