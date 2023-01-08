@@ -20,7 +20,7 @@ public class VimuPlayer {
     public static final String TAG = "ThirdParty.VimuPlayer";
 
     private static final String PACKAGE_NAME = "net.gtvbox.videoplayer";
-    private static final String PLAYBACK_ACTIVITY = "net.gtvbox.videoplayer.MainActivity";
+    private static final String PLAYBACK_ACTIVITY = "net.gtvbox.videoplayer.ActivityScreen";
 
     private static class VimuPackageInfo {
         final String packageName;
