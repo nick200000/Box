@@ -36,7 +36,7 @@ public class VimuPlayer {
             new VimuPackageInfo(PACKAGE_NAME, PLAYBACK_ACTIVITY),
     };
 
-    public static VimuPlayerPackageInfo getPackageInfo() {
+    public static VimuPackageInfo getPackageInfo() {
         for (VimuPackageInfo pkg : PACKAGES) {
             try {
                 ApplicationInfo info = App.getInstance().getPackageManager().getApplicationInfo(pkg.packageName, 0);
