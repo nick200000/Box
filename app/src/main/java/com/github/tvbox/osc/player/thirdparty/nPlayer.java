@@ -16,43 +16,43 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 
-public class nPlayerPlayer {
-    public static final String TAG = "ThirdParty.nPlayer";
+public class nPlayer {
+    public static final String TAG = "ThirdParty.n";
 
     private static final String PACKAGE_NAME = "com.newin.nplayer.pro";
     private static final String PLAYBACK_ACTIVITY = "com.newin.nplayer.pro.MainActivity";
 
-    private static class nPlayerPackageInfo {
+    private static class nPackageInfo {
         final String packageName;
         final String activityName;
 
-        nPlayerPackageInfo(String packageName, String activityName) {
+        nPackageInfo(String packageName, String activityName) {
             this.packageName = packageName;
             this.activityName = activityName;
         }
     }
 
-    private static final nPlayerPackageInfo[] PACKAGES = {
-            new nPlayerPackageInfo(PACKAGE_NAME, PLAYBACK_ACTIVITY),
+    private static final nPackageInfo[] PACKAGES = {
+            new nPackageInfo(PACKAGE_NAME, PLAYBACK_ACTIVITY),
     };
 
-    public static nPlayerPackageInfo getPackageInfo() {
-        for (nPlayerPackageInfo pkg : PACKAGES) {
+    public static nPackageInfo getPackageInfo() {
+        for (nPackageInfo pkg : PACKAGES) {
             try {
                 ApplicationInfo info = App.getInstance().getPackageManager().getApplicationInfo(pkg.packageName, 0);
                 if (info.enabled)
                     return pkg;
                 else
-                    Log.v(TAG, "nPlayer Player package `" + pkg.packageName + "` is disabled.");
+                    Log.v(TAG, "n Player package `" + pkg.packageName + "` is disabled.");
             } catch (PackageManager.NameNotFoundException ex) {
-                Log.v(TAG, "nPlayer Player package `" + pkg.packageName + "` does not exist.");
+                Log.v(TAG, "n Player package `" + pkg.packageName + "` does not exist.");
             }
         }
         return null;
     }
 
     public static boolean run(Activity activity, String url, String title, String subtitle, HashMap<String, String> headers) {
-        nPlayerPackageInfo packageInfo = getPackageInfo();
+        nPackageInfo packageInfo = getPackageInfo();
         if (packageInfo == null)
             return false;
 
@@ -62,14 +62,14 @@ public class nPlayerPlayer {
         intent.setData(Uri.parse(url));
         intent.putExtra("title", title);
         intent.putExtra("name", title);
-        intent.putExtra("nPlayer.extra.title", title);
+        intent.putExtra("n.extra.title", title);
         if (headers != null && headers.size() > 0) {
             try {
                 JSONObject json = new JSONObject();
                 for (String key : headers.keySet()) {
                     json.put(key, headers.get(key).trim());
                 }
-                intent.putExtra("nPlayer.extra.http_header", json.toString());
+                intent.putExtra("n.extra.http_header", json.toString());
             } catch (JSONException e) {
                 e.printStackTrace();
             }
