@@ -20,7 +20,7 @@ public class nPlayer {
     public static final String TAG = "ThirdParty.n";
 
     private static final String PACKAGE_NAME = "com.newin.nplayer.pro";
-    private static final String PLAYBACK_ACTIVITY = "com.newin.nplayer.pro.MainActivity";
+    private static final String PLAYBACK_ACTIVITY = "com.newin.nplayer.pro.ActivityScreen";
 
     private static class nPackageInfo {
         final String packageName;
