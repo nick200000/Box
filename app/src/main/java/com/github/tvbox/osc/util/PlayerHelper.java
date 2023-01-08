@@ -150,17 +150,17 @@ public class PlayerHelper {
         } else if (playType == 12) {
             return "Kodi";
         } else if (playType == 13) {
-            return "nPlayer";
+            return "n";
         } else if (playType == 14) {
             return "VLC";
         } else if (playType == 15) {
-            return "JustPlayer";
+            return "Just";
         } else if (playType == 16) {
-            return "NovaPlayer";
+            return "Nova";
         } else if (playType == 17) {
             return "Kodinerds";
         } else if (playType == 18) {
-            return "VimuPlayer";
+            return "Vimu";
         } else {
             return "系统";
         }
