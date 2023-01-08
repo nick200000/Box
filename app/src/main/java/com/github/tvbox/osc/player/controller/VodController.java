@@ -581,7 +581,19 @@ public class VodController extends BaseController {
 //                            playerVail = reexPlayerExist;
 //                        } else if (playerType == 12) {
 //                            playerVail = KodiExist;
-//                        } else if (playerType > 12) {
+//                        } else if (playerType == 13) {
+//                            playerVail = nPlayerExist;
+//                        } else if (playerType == 14) {
+//                            playerVail = vLCPlayerExist;
+//                        } else if (playerType == 15) {
+//                            playerVail = justPlayerExist;
+//                        } else if (playerType == 16) {
+//                            playerVail = novaPlayerExist;
+//                        } else if (playerType == 17) {
+//                            playerVail = KodinerdsExist;
+//                        } else if (playerType == 18) {
+//                            playerVail = vimuPlayerExist;
+//                        } else if (playerType > 18) {
 //                            playerType = 0;
 //                            playerVail = true;
 //                        }
