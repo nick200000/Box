@@ -62,7 +62,7 @@ public class NovaPlayer {
         intent.setData(Uri.parse(url));
         intent.putExtra("title", title);
         intent.putExtra("name", title);
-        intent.putExtra("nNovaPlayer.extra.title", title);
+        intent.putExtra("novaPlayer.extra.title", title);
         if (headers != null && headers.size() > 0) {
             try {
                 JSONObject json = new JSONObject();
