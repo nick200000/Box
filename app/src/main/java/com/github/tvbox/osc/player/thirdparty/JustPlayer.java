@@ -16,43 +16,43 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 
-public class JustPlayerPlayer {
-    public static final String TAG = "ThirdParty.JustPlayer";
+public class JustPlayer {
+    public static final String TAG = "ThirdParty.Just";
 
     private static final String PACKAGE_NAME = "com.brouken.player";
     private static final String PLAYBACK_ACTIVITY = "com.brouken.player.MainActivity";
 
-    private static class JustPlayerPackageInfo {
+    private static class JustPackageInfo {
         final String packageName;
         final String activityName;
 
-        JustPlayerPackageInfo(String packageName, String activityName) {
+        JustPackageInfo(String packageName, String activityName) {
             this.packageName = packageName;
             this.activityName = activityName;
         }
     }
 
-    private static final JustPlayerPackageInfo[] PACKAGES = {
-            new JustPlayerPackageInfo(PACKAGE_NAME, PLAYBACK_ACTIVITY),
+    private static final JustPackageInfo[] PACKAGES = {
+            new JustPackageInfo(PACKAGE_NAME, PLAYBACK_ACTIVITY),
     };
 
     public static JustPlayerPackageInfo getPackageInfo() {
-        for (JustPlayerPackageInfo pkg : PACKAGES) {
+        for (JustPackageInfo pkg : PACKAGES) {
             try {
                 ApplicationInfo info = App.getInstance().getPackageManager().getApplicationInfo(pkg.packageName, 0);
                 if (info.enabled)
                     return pkg;
                 else
-                    Log.v(TAG, "JustPlayer Player package `" + pkg.packageName + "` is disabled.");
+                    Log.v(TAG, "Just Player package `" + pkg.packageName + "` is disabled.");
             } catch (PackageManager.NameNotFoundException ex) {
-                Log.v(TAG, "JustPlayer Player package `" + pkg.packageName + "` does not exist.");
+                Log.v(TAG, "Just Player package `" + pkg.packageName + "` does not exist.");
             }
         }
         return null;
     }
 
     public static boolean run(Activity activity, String url, String title, String subtitle, HashMap<String, String> headers) {
-        JustPlayerPackageInfo packageInfo = getPackageInfo();
+        JustPackageInfo packageInfo = getPackageInfo();
         if (packageInfo == null)
             return false;
 
