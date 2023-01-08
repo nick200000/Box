@@ -18,7 +18,7 @@ public class VLCPlayer {
     public static final String TAG = "ThirdParty.VLCPlayer";
 
     private static final String PACKAGE_NAME = "org.videolan.vlc";
-    private static final String PLAYBACK_ACTIVITY = "org.videolan.vlc.ActivityScreen";
+    private static final String PLAYBACK_ACTIVITY = "org.videolan.vlc.gui.video.VideoPlayerActivity";
 
     private static class VLCPackageInfo {
         final String packageName;
