@@ -62,20 +62,20 @@ public class NovaPlayer {
         intent.setData(Uri.parse(url));
         intent.putExtra("title", title);
         intent.putExtra("name", title);
-        intent.putExtra("NovaPlayer.extra.title", title);
+        intent.putExtra("nNovaPlayer.extra.title", title);
         if (headers != null && headers.size() > 0) {
             try {
                 JSONObject json = new JSONObject();
                 for (String key : headers.keySet()) {
                     json.put(key, headers.get(key).trim());
                 }
-                intent.putExtra("NovaPlayer.extra.http_header", json.toString());
+                intent.putExtra("novaPlayer.extra.http_header", json.toString());
             } catch (JSONException e) {
                 e.printStackTrace();
             }
         }
         if (subtitle != null && !subtitle.isEmpty()) {
-            intent.putExtra("NovaPlayer.extra.subtitle", subtitle);
+            intent.putExtra("novaPlayer.extra.subtitle", subtitle);
         }
         try {
             activity.startActivity(intent);
