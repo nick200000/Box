@@ -18,9 +18,9 @@ public class nPlayer {
     public static final String TAG = "ThirdParty.nPlayer";
 
     private static final String PACKAGE_NAME = "com.newin.nplayer.pro";
-    private static final String PLAYBACK_ACTIVITY = "com.newin.nplayer.activities.SplashActivity";
+    private static final String PLAYBACK_ACTIVITY = "com.newin.nplayer.activities.MainActivity";
 
-    private static class nPackageInfo {
+    private static class nPlayerPackageInfo {
         final String packageName;
         final String activityName;
 
@@ -30,23 +30,23 @@ public class nPlayer {
         }
     }
 
-    private static final nPackageInfo[] PACKAGES = {
+    private static final nPlayerPackageInfo[] PACKAGES = {
             new nPackageInfo(PACKAGE_NAME, PLAYBACK_ACTIVITY),
     };
 
     /**
-     * @return null if any n Player packages not exist.
+     * @return null if any nPlayer packages not exist.
      */
-    public static nPackageInfo getPackageInfo() {
+    public static nPlayerPackageInfo getPackageInfo() {
         for (nPackageInfo pkg : PACKAGES) {
             try {
                 ApplicationInfo info = App.getInstance().getPackageManager().getApplicationInfo(pkg.packageName, 0);
                 if (info.enabled)
                     return pkg;
                 else
-                    Log.v(TAG, "n Player package `" + pkg.packageName + "` is disabled.");
+                    Log.v(TAG, "nPlayer package `" + pkg.packageName + "` is disabled.");
             } catch (PackageManager.NameNotFoundException ex) {
-                Log.v(TAG, "n Player package `" + pkg.packageName + "` does not exist.");
+                Log.v(TAG, "nPlayer package `" + pkg.packageName + "` does not exist.");
             }
         }
         return null;
