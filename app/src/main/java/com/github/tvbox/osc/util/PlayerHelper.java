@@ -156,11 +156,7 @@ public class PlayerHelper {
         } else if (playType == 15) {
             return "JustPlayer";
         } else if (playType == 16) {
-            return "Nova";
-        } else if (playType == 17) {
             return "Kodinerds";
-        } else if (playType == 18) {
-            return "Vimu";
         } else {
             return "系统";
         }
