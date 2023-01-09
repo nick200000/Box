@@ -152,7 +152,7 @@ public class PlayerHelper {
         } else if (playType == 13) {
             return "n";
         } else if (playType == 14) {
-            return "VLC";
+            return "VLCPlayer";
         } else if (playType == 15) {
             return "Just";
         } else if (playType == 16) {
