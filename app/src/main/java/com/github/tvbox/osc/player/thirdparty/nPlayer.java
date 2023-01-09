@@ -38,7 +38,7 @@ public class nPlayer {
      * @return null if any nPlayer packages not exist.
      */
     public static nPlayerPackageInfo getPackageInfo() {
-        for (nPackageInfo pkg : PACKAGES) {
+        for (nPlayerPackageInfo pkg : PACKAGES) {
             try {
                 ApplicationInfo info = App.getInstance().getPackageManager().getApplicationInfo(pkg.packageName, 0);
                 if (info.enabled)
