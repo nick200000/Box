@@ -24,14 +24,14 @@ public class nPlayer {
         final String packageName;
         final String activityName;
 
-        nPackageInfo(String packageName, String activityName) {
+        nPlayerPackageInfo(String packageName, String activityName) {
             this.packageName = packageName;
             this.activityName = activityName;
         }
     }
 
     private static final nPlayerPackageInfo[] PACKAGES = {
-            new nPackageInfo(PACKAGE_NAME, PLAYBACK_ACTIVITY),
+            new nPlayerPackageInfo(PACKAGE_NAME, PLAYBACK_ACTIVITY),
     };
 
     /**
@@ -71,7 +71,7 @@ public class nPlayer {
 
 
     public static boolean run(Activity activity, String url, String title, String subtitle, HashMap<String, String> headers) {
-        nPackageInfo packageInfo = getPackageInfo();
+        nPlayerPackageInfo packageInfo = getPackageInfo();
         if (packageInfo == null)
             return false;
 
