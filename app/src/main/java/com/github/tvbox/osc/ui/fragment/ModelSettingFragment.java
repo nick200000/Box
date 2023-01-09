@@ -398,8 +398,6 @@ public class ModelSettingFragment extends BaseLazyFragment {
                 players.add(14);
                 players.add(15);
                 players.add(16);
-                players.add(17);
-                players.add(18);
                 SelectDialog<Integer> dialog = new SelectDialog<>(mActivity);
                 dialog.setTip(getString(R.string.dia_player));
                 dialog.setAdapter(new SelectDialogAdapter.SelectDialogInterface<Integer>() {
