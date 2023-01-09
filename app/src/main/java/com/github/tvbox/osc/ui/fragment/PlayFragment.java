@@ -57,9 +57,7 @@ import com.github.tvbox.osc.player.thirdparty.ReexPlayer;
 import com.github.tvbox.osc.player.thirdparty.nPlayer;
 import com.github.tvbox.osc.player.thirdparty.VLCPlayer;
 import com.github.tvbox.osc.player.thirdparty.JustPlayer;
-import com.github.tvbox.osc.player.thirdparty.NovaPlayer;
 import com.github.tvbox.osc.player.thirdparty.Kodinerds;
-import com.github.tvbox.osc.player.thirdparty.VimuPlayer;
 import com.github.tvbox.osc.ui.adapter.SelectDialogAdapter;
 import com.github.tvbox.osc.ui.dialog.SearchSubtitleDialog;
 import com.github.tvbox.osc.ui.dialog.SelectDialog;
@@ -568,17 +566,7 @@ public class PlayFragment extends BaseLazyFragment {
                                     }
                                     case 16: {
                                         extPlay = true;
-                                        callResult = NovaPlayer.run(requireActivity(), url, playTitle, playSubtitle, headers);
-                                        break;
-                                    }
-                                    case 17: {
-                                        extPlay = true;
                                         callResult = Kodinerds.run(requireActivity(), url, playTitle, playSubtitle, headers);
-                                        break;
-                                    }
-                                    case 18: {
-                                        extPlay = true;
-                                        callResult = VimuPlayer.run(requireActivity(), url, playTitle, playSubtitle, headers);
                                         break;
                                     }
                                 }
