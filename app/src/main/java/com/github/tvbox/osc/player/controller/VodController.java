@@ -40,9 +40,7 @@ import com.github.tvbox.osc.player.thirdparty.ReexPlayer;
 import com.github.tvbox.osc.player.thirdparty.nPlayer;
 import com.github.tvbox.osc.player.thirdparty.VLCPlayer;
 import com.github.tvbox.osc.player.thirdparty.JustPlayer;
-import com.github.tvbox.osc.player.thirdparty.NovaPlayer;
 import com.github.tvbox.osc.player.thirdparty.Kodinerds;
-import com.github.tvbox.osc.player.thirdparty.VimuPlayer;
 import com.github.tvbox.osc.subtitle.widget.SimpleSubtitleView;
 import com.github.tvbox.osc.ui.activity.DetailActivity;
 import com.github.tvbox.osc.ui.activity.HomeActivity;
@@ -588,12 +586,8 @@ public class VodController extends BaseController {
 //                        } else if (playerType == 15) {
 //                            playerVail = justPlayerExist;
 //                        } else if (playerType == 16) {
-//                            playerVail = novaPlayerExist;
-//                        } else if (playerType == 17) {
 //                            playerVail = KodinerdsExist;
-//                        } else if (playerType == 18) {
-//                            playerVail = vimuPlayerExist;
-//                        } else if (playerType > 18) {
+//                        } else if (playerType > 16) {
 //                            playerType = 0;
 //                            playerVail = true;
 //                        }
@@ -637,14 +631,8 @@ public class VodController extends BaseController {
                     if (justPlayerExist) {
                         players.add(15);
                     }
-                    if (novaPlayerExist) {
-                        players.add(16);
-                    }
                     if (KodinerdsExist) {
-                        players.add(17);
-                    }
-                    if (vimuPlayerExist) {
-                        players.add(18);
+                        players.add(16);
                     }
                     SelectDialog<Integer> dialog = new SelectDialog<>(mActivity);
                     dialog.setTip(HomeActivity.getRes().getString(R.string.dia_player));
@@ -882,9 +870,7 @@ public class VodController extends BaseController {
     private boolean nPlayerExist = false;
     private boolean VLCPlayerExist = false;
     private boolean justPlayerExist = false;
-    private boolean novaPlayerExist = false;
     private boolean KodinerdsExist = false;
-    private boolean vimuPlayerExist = false;
     public void setPlayerConfig(JSONObject playerCfg) {
         this.mPlayerConfig = playerCfg;
         updatePlayerCfgView();
@@ -894,9 +880,7 @@ public class VodController extends BaseController {
         nPlayerExist = nPlayer.getPackageInfo() != null;
         VLCPlayerExist = VLCPlayer.getPackageInfo() != null;
         justPlayerExist = JustPlayer.getPackageInfo() != null;
-        novaPlayerExist = NovaPlayer.getPackageInfo() != null;
         KodinerdsExist = Kodinerds.getPackageInfo() != null;
-        vimuPlayerExist = VimuPlayer.getPackageInfo() != null;
     }
 
     void updatePlayerCfgView() {
