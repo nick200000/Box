@@ -1,5 +1,5 @@
 # Box
-
+基於takagen9 20230106-22529版新,加入调用VLCPlayer/nPlayer/JustPlayer/Kodinerds播放器
 === Source Code - Editing the app default settings ===
 /src/main/java/com/github/tvbox/osc/base/App.java
 
