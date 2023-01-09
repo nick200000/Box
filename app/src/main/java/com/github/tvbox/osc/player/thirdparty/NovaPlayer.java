@@ -18,7 +18,7 @@ public class NovaPlayer {
     public static final String TAG = "ThirdParty.NovaPlayer";
 
     private static final String PACKAGE_NAME = "org.courville.nova";
-    private static final String PLAYBACK_ACTIVITY = "com.archos.mediacenter.video.player.PlayerActivity";
+    private static final String PLAYBACK_ACTIVITY = "com.archos.mediacenter.video.player.Player";
 
     private static class NovaPackageInfo {
         final String packageName;
