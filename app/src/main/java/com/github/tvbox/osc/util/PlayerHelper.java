@@ -150,11 +150,11 @@ public class PlayerHelper {
         } else if (playType == 12) {
             return "Kodi";
         } else if (playType == 13) {
-            return "n";
+            return "nPlayer";
         } else if (playType == 14) {
             return "VLCPlayer";
         } else if (playType == 15) {
-            return "Just";
+            return "JustPlayer";
         } else if (playType == 16) {
             return "Nova";
         } else if (playType == 17) {
