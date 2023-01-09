@@ -584,7 +584,7 @@ public class VodController extends BaseController {
 //                        } else if (playerType == 13) {
 //                            playerVail = nPlayerExist;
 //                        } else if (playerType == 14) {
-//                            playerVail = vLCPlayerExist;
+//                            playerVail = VLCPlayerExist;
 //                        } else if (playerType == 15) {
 //                            playerVail = justPlayerExist;
 //                        } else if (playerType == 16) {
@@ -631,7 +631,7 @@ public class VodController extends BaseController {
                     if (nPlayerExist) {
                         players.add(13);
                     }
-                    if (vLCPlayerExist) {
+                    if (VLCPlayerExist) {
                         players.add(14);
                     }
                     if (justPlayerExist) {
@@ -880,7 +880,7 @@ public class VodController extends BaseController {
     private boolean reexPlayerExist = false;
     private boolean KodiExist = false;
     private boolean nPlayerExist = false;
-    private boolean vLCPlayerExist = false;
+    private boolean VLCPlayerExist = false;
     private boolean justPlayerExist = false;
     private boolean novaPlayerExist = false;
     private boolean KodinerdsExist = false;
@@ -892,7 +892,7 @@ public class VodController extends BaseController {
         reexPlayerExist = ReexPlayer.getPackageInfo() != null;
         KodiExist = Kodi.getPackageInfo() != null;
         nPlayerExist = nPlayer.getPackageInfo() != null;
-        vLCPlayerExist = VLCPlayer.getPackageInfo() != null;
+        VLCPlayerExist = VLCPlayer.getPackageInfo() != null;
         justPlayerExist = JustPlayer.getPackageInfo() != null;
         novaPlayerExist = NovaPlayer.getPackageInfo() != null;
         KodinerdsExist = Kodinerds.getPackageInfo() != null;
