@@ -1,3 +1,5 @@
+影視倉有調用外部播放器功能,我這就不再更新了,棄坑
+
 # Box
 
 === Source Code - Editing the app default settings ===
